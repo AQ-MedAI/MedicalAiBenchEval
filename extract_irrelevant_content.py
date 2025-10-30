@@ -81,7 +81,7 @@ class ContentExtractor:
         """Parse JSON format irrelevant content extraction results"""
         try:
             # Try to extract JSON code block
-            json_match = re.search(r'```json\s*([\s\S]*?)\s*```down-', content)
+            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', content)
             if json_match:
                 json_str = json_match.group(1).strip()
             else:
