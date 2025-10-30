@@ -409,7 +409,7 @@ point:
 
 ### 数据集概述
 
-我们提供了一个专门的**胸外科评测数据集** (`data/input/specialty_evaluation_dataset.xlsx`)，包含92个精心策划的临床案例，用于评估AI模型在胸外科场景中的表现。该数据集专注于胸外科的复杂临床决策，特别是非小细胞肺癌(NSCLC)的分期和治疗规划。
+我们提供了一个专门的**胸外科评测数据集** (`data/input/GAPS-NSCLC-preview.xlsx`)，包含92个精心策划的临床案例，用于评估AI模型在胸外科场景中的表现。该数据集专注于胸外科的复杂临床决策，特别是非小细胞肺癌(NSCLC)的分期和治疗规划。
 
 ### 数据集结构
 
@@ -486,7 +486,7 @@ point:
 
 ```bash
 # 评估胸外科数据集
-python medical_evaluation_pipeline.py data/input/specialty_evaluation_dataset.xlsx \
+python medical_evaluation_pipeline.py data/input/GAPS-NSCLC-preview.xlsx \
   --judge-models m1 m2 m3 \
   --voting-strategy conservative \
   -o results/thoracic_surgery_evaluation.xlsx
@@ -776,7 +776,7 @@ medical-ai-bench-eval/
 ├── requirements.txt            # 依赖列表
 └── data/                       # 数据目录
     ├── input/                  # 输入文件
-    │   ├── specialty_evaluation_dataset.xlsx  # 胸外科评测数据集 (92个案例)
+    │   ├── GAPS-NSCLC-preview.xlsx  # 胸外科评测数据集 (92个案例)
     │   └── community_contributions.xlsx       # 社区贡献案例
     └── output/                 # 输出文件
         └── analysis/           # 分析报告

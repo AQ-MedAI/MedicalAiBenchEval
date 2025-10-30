@@ -471,7 +471,7 @@ point:
 
 ### Dataset Overview
 
-We provide a specialized **Thoracic Surgery Evaluation Dataset** (`data/input/specialty_evaluation_dataset.xlsx`) containing 92 carefully curated clinical cases for evaluating AI models' performance in thoracic surgery scenarios. This dataset focuses on complex clinical decision-making in chest surgery, particularly for non-small cell lung cancer (NSCLC) staging and treatment planning.
+We provide a specialized **Thoracic Surgery Evaluation Dataset** (`data/input/GAPS-NSCLC-preview.xlsx`) containing 92 carefully curated clinical cases for evaluating AI models' performance in thoracic surgery scenarios. This dataset focuses on complex clinical decision-making in chest surgery, particularly for non-small cell lung cancer (NSCLC) staging and treatment planning.
 
 ### Dataset Structure
 
@@ -548,7 +548,7 @@ This dataset is designed to work seamlessly with the GAPS evaluation pipeline:
 
 ```bash
 # Evaluate thoracic surgery dataset
-python medical_evaluation_pipeline.py data/input/specialty_evaluation_dataset.xlsx \
+python medical_evaluation_pipeline.py data/input/GAPS-NSCLC-preview.xlsx \
   --judge-models m1 m2 m3 \
   --voting-strategy conservative \
   -o results/thoracic_surgery_evaluation.xlsx
@@ -835,7 +835,7 @@ MedicalAiBenchEval/
 ├── requirements.txt            # Dependency list
 └── data/                       # Data directory
     ├── input/                  # Input files
-    │   ├── specialty_evaluation_dataset.xlsx  # Thoracic surgery evaluation dataset (92 cases)
+    │   ├── GAPS-NSCLC-preview.xlsx  # Thoracic surgery evaluation dataset (92 cases)
     │   └── community_contributions.xlsx       # Community contributed cases
     └── output/                 # Output files
         └── analysis/           # Analysis reports
