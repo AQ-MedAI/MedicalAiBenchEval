@@ -820,7 +820,7 @@ python medical_evaluation_pipeline.py input.xlsx -v
 ### File Structure
 
 ```
-medical-ai-bench-eval/
+MedicalAiBenchEval/
 ├── clinical_answer_judge.py      # Multi-model review processor
 ├── clinical_scoring_calculator.py # Score calculator
 ├── medical_evaluation_pipeline.py # Main pipeline controller
