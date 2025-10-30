@@ -1,0 +1,47 @@
+# === 敏感数据与环境 ===
+.env
+*.key
+*.pem
+
+# === 数据目录（不上传） ===
+data/output
+results/
+!data/.gitkeep
+!results/.gitkeep
+
+# === Python 缓存 ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === 虚拟环境 ===
+venv/
+env/
+.venv/
+
+# === IDE / 编辑器 ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === Jupyter / 临时文件 ===
+.ipynb_checkpoints/
+*.tmp
+*.bak
+
+# === OS 生成文件 ===
+.DS_Store
+Thumbs.db
+
+# === 日志 ===
+*.log
+logs/
+
+# === 模型缓存（如 HuggingFace） ===
+.cache/
+.huggingface/
+bash.sh
+submit.py

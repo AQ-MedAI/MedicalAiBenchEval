@@ -1,0 +1,71 @@
+# Medical Model Evaluation Visualization Configuration
+# Usage: python medical_evaluation_analyzer.py -c config_visualization.yaml
+
+analysis:
+  # Basic configuration remains unchanged
+  input_file: "data/input/new/medical_evaluation_result_V2.xlsx"
+  columns:
+    model_scores:
+      GPT-5: "gpt_5_answer_judged_json_scores"
+      Gemini-2.5-Pro: "gemini_2_5_pro_answer_judged_json_scores"
+      Claude-Opus-4: "claude_opus_4_answer_judged_json_scores"
+    category_column: "category"
+    score_field: "normalized"
+
+  # Output path configuration - all files output to data/output/analysis folder
+  output:
+    visualization: "data/output/analysis/medical_evaluation_report.png"
+    detailed_report: "data/output/analysis/medical_analysis_report.txt"
+    csv_summary: "data/output/analysis/model_performance_summary.csv"
+
+  # Visualization specific configuration
+  visualization:
+    # Chart selection switches
+    charts:
+      bar_overall: true        # Overall average score comparison
+      boxplot_distribution: true   # Score distribution box plot
+      heatmap_category: true       # Heatmap
+      bar_category: true           # Category-wise bar chart
+      radar_chart: true            # Radar chart
+      density_plot: true           # Density distribution plot
+
+    # Chart style configuration
+    style:
+      figure_size: [24, 16]
+      dpi: 300
+      font_size:
+        title: 16
+        label: 12
+        annotation: 10
+      colors:
+        GPT-5: "#FF6B6B"
+        Gemini-2.5-Pro: "#4ECDC4"
+        Claude-Opus-4: "#45B7D1"
+
+      # Font configuration (use English to avoid garbled text)
+      font_family:
+        - "Arial Unicode MS"       # Universal English font
+        - "Helvetica"              # English font
+        - "DejaVu Sans"            # Alternative font
+
+      # Chart details
+      layout:
+        tight_layout: true
+        subplots_adjust:
+          top: 0.93
+          bottom: 0.07
+          left: 0.08
+          right: 0.95
+
+    # Output format control
+    output_format:
+      format: "png"               # Supports png, pdf, svg
+      transparent: false
+      quality: 95                 # PNG compression quality (1-100)
+
+    # Chart grid configuration
+    grid:
+      show: true
+      alpha: 0.3
+      linestyle: "--"
+      linewidth: 0.5

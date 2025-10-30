@@ -1,0 +1,67 @@
+vote:
+  strategy: majority
+  min_valid: 2
+  timeout: 5.0
+
+sampler:
+  rate: 0.1          # 10% spot check
+
+meta:
+  threshold: 0.8     # Macro-F1 target
+
+point:
+  A1: 5
+  A2: 3
+  A3: 1
+  S1: -1
+  S2: -2
+  S3: -3
+  S4: -4
+
+# File path configuration
+files:
+  input_file: "data/input/specialty_evaluation_dataset.xlsx"
+  output_file: "data/output/specialty_evaluation_result.xlsx"
+
+pipeline:
+  disable_met_nomet: false
+  disable_irrelevant_extraction: true
+  exclude_irrelevant_scoring: true
+  disable_data_analysis: true  # New addition
+  analysis_config_file: 'config_visualization.yaml'  # New addition
+
+# Model configuration
+models:
+  judge_models: ["m1", "m2", "m3"]
+  extract_model: "m5"
+  grade_models: ["m1", "m2", "m3"]
+  voting_strategy: "conservative"
+
+# Column name configuration
+columns:
+  question_col: "question"
+  rubric_col: "rubrics"
+  answer_columns: ["gpt_5_answer","gemini_2_5_pro_answer","claude_opus_4_answer"]
+
+
+# Parallel processing configuration
+processing:
+
+  batch_size: 2             # Batch size
+  concurrent_models: 3      # Model concurrency count
+  concurrent_items: 1       # Item concurrency count
+
+# Request control configuration
+request_control:
+  base_delay: 0.3          # Base delay (API request interval)
+  batch_delay: 1           # Inter-batch delay (interval between batches)
+  item_delay: 0.3            # Inter-item delay (interval between items)
+
+# Retry configuration
+retry:
+  # Maximum retry count
+  max_retries: 4
+  # Retry delay multiplier
+  retry_multiplier: 2
+  # Additional wait time for 429 errors
+  rate_limit_wait: 15.0
