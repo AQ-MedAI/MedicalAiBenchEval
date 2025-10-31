@@ -99,7 +99,6 @@ python medical_evaluation_pipeline.py input_data.xlsx -v
 - **并行处理**：支持步骤并行执行，显著提升处理效率
 - **详细统计报告**：生成可视化分析报告和性能对比数据
 
-## 系统架构
 
 
 ### 系统流程图
