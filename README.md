@@ -1026,4 +1026,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 🤗 <a href="https://huggingface.co/datasets/AQ-MedAI/GAPS-NSCLC-preview" target="_blank">HuggingFace Dataset</a> ｜
 📄 <a href="https://arxiv.org/abs/2510.13734" target="_blank">arXiv</a> ｜
-🌐 <a href="README_ZH.md">中文</a> ｜
+🌐 <a href="README_CN.md">中文</a> ｜
