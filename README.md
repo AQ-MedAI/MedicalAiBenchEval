@@ -24,6 +24,7 @@
 - [Evaluation Framework](#evaluation-framework)
   - [Scoring System](#scoring-system)
   - [Evaluation Metrics](#evaluation-metrics)
+  - [Human Expert Comparison Evaluation](#human-expert-comparison-evaluation)
 - [Dataset](#dataset)
   - [Thoracic Surgery Dataset](#thoracic-surgery-dataset)
   - [Data Quality](#data-quality)
@@ -466,6 +467,43 @@ point:
 --rubric-col "Evaluation Points"  # Evaluation points column name
 --answer-columns "Response1" "Response2" "Response3"  # Model response column names
 ```
+
+## Evaluation Framework
+
+### Scoring System
+
+The GAPS evaluation framework employs a multi-dimensional scoring system that combines positive and negative points for comprehensive assessment:
+
+**Positive Points (A-class)**:
+- **A1 (5 points)**: Critical medical knowledge affecting patient safety
+- **A2 (3 points)**: Important clinical considerations  
+- **A3 (1 point)**: Additional relevant information
+
+**Negative Points (S-class)**:
+- **S1 (-1 point)**: Minor inaccuracies not affecting core treatment
+- **S2 (-2 points)**: Incorrect information that could mislead
+- **S3 (-3 points)**: Serious medical errors
+- **S4 (-4 points)**: Dangerous misinformation that could harm patients
+
+### Evaluation Metrics
+
+The system provides various evaluation metrics to comprehensively measure AI model performance:
+
+| Metric | Description |
+|--------|-------------|
+| max_possible | Theoretical maximum score (sum of all positive points) |
+| final_total_score | Actual score (Met items score - irrelevant content deduction) |
+| normalized | Normalized score (between 0-1) |
+| positive_total_count | Number of positive point hits |
+| rubric_total_count | Number of negative point hits |
+| irrelevant_total_count | Total irrelevant content count |
+
+### Human Expert Comparison Evaluation
+
+This evaluation aims to examine the consistency performance of multiple large language models with expert annotations in specialized domain text key point extraction tasks. Through comprehensive comparison of three mainstream models and their fusion systems, combined with independent annotation results from five domain experts, we have reached the following key conclusions:
+
+#### 1. Excellent Overall AI System Performance
+The fusion model achieved an overall consistency rate of **90.00%** with expert consensus, with a Cohen's Kappa coefficient of **0.77**, entering the "substantial agreement" range (Landis & Koch standard) and approaching the threshold of "near perfect" agreement. This level falls within the consistency range among the five experts (88.50%–92.00%), indicating that current AI systems possess professional reliability approaching that of human experts in clinical judgment capabilities.
 
 ## 📊 Thoracic Surgery Evaluation Dataset
 
